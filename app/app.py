@@ -36,6 +36,10 @@ model_path = os.path.join(BASE_DIR, "../model/model.pkl")
 
 model = joblib.load(model_path)
 
+@app.route("/")
+def home():
+    return "ML API is running successfully 🚀"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
